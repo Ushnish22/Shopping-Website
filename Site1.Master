@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Website1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table style="width:1100px;margin:0 auto">
+                <tr style="width:1100px; height:50px;border-color:#5F98F3;background-color:white">
+                    <td style="width:100px">
+                        <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl="~/Images/Image1.png" Width="100px" /></td>
+                    <td style="width:780px" align="center">
+                        <asp:Label ID="Label1" runat="server" Text="Electronic Shopping Centre" Font-Bold="True" 
+                            Font-Names="Copperplate Gothic Bold" ForeColor="#000099" Font-Size="35px"></asp:Label>
+                        <br />For Those Who Love Shopping....
+                    </td>
+                    <td style="width:220px;text-align:right">
+         
+                         <asp:ImageButton ID="ImageButton1" runat="server" Height="50px" ImageUrl="~/Images/social1.png" OnClick="ImageButton1_Click" Width="50px" Style="text-align:left" />
+                         <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Images/social2.png" Width="50px" Style="text-align:left" />
+                         <asp:ImageButton ID="ImageButton3" runat="server" Height="50px" ImageUrl="~/Images/cart.png" Width="50px" CausesValidation="False"  Style="text-align:left" OnClick="ImageButton3_Click"/>
+                        <asp:Label ID="Label2" runat="server" Text="Label" Font-Bold="True" Font-Size="X-Large"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="width=100px;height=40px;background-color:#5F98F3">
+                        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" Orientation="Horizontal" StaticSubMenuIndent="19px">
+                            <Items>
+                                <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
+                                <asp:MenuItem Text="All Products" Value="All Products"></asp:MenuItem>
+                                <asp:MenuItem Text="Register" Value="Register"></asp:MenuItem>
+                                <asp:MenuItem Text="Login" Value="Login"></asp:MenuItem>
+                                <asp:MenuItem Text="About Us" Value="About Us"></asp:MenuItem>
+                                <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#FF6666" BorderColor="#FF6666" BorderStyle="Outset" ForeColor="White" Height="40px" />
+                            <StaticMenuItemStyle Font-Bold="True" Font-Size="30px" ForeColor="Black" HorizontalPadding="54px" />
+                            <StaticSelectedStyle BackColor="#FF5050" BorderColor="#FF6666" BorderStyle="Inset" ForeColor="#666666" Height="30px" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr style="width:1100px; height:310px">
+                    <td colspan="3">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:Timer ID="Timer1" runat="server"  OnTick="Timer1_Tick"></asp:Timer>
+                                <asp:Image ID="Image2" runat="server" BackColor="White" BorderColor="#333333" BorderStyle="Double" Height="270px" Width="1400px" ImageUrl="~/Images/ad2.jfif" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </td>
+                    <tr>
+                    <td colspan="3"><asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder></td>
+                </tr>
+                <tr style="width:1100px;height:25px;background-color:black; text-align:center;color:white">
+                    <td colspan="3">
+                        &copy; Online Electronics Shopping Pvt. | All Rights Reserved
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
